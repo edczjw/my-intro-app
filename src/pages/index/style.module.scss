@@ -1,0 +1,89 @@
+@import '@styles/variable.scss';
+.BaseConx{
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 32px;
+    background-image: url('../../assets/backgroundImg/background1.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;  
+    box-sizing: border-box;  
+    .text{
+        width: 100%;
+        height: 240px;
+        padding: 32px;
+        border-radius: 16px;
+        box-sizing: border-box;
+        background-color: #fff; 
+        box-shadow: 0px 6px 36px 0px rgba(66, 66, 70, 0.08);
+        display: flex;
+        align-items: center; 
+        .avtars{  
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            box-sizing: border-box;
+            background-color: #fff; 
+            .Img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+        .sention{   
+            flex: 1; 
+            height: 90px;
+            display: flex; 
+            flex-direction: column;
+            justify-content: space-between; 
+            font-size: 24px;
+            color: rgb(150, 148, 148);  
+            padding: 0 32px; 
+            .name{
+                font-size: 32px;  
+                color: #333;
+                line-height: 40px; 
+                display: flex;
+                align-items: center;
+
+            }
+        }
+    }
+
+    .box{
+        width: 100%;
+        margin-top: 28px; 
+        border-radius: 16px;
+        padding: 32px;
+        color: rgb(150, 148, 148);
+        box-sizing: border-box;
+        background-color: #fff;
+        box-shadow: 0px 6px 36px 0px rgba(66, 66, 70, 0.08);
+        .tit{ 
+            font-size: 38px;
+            height: 60px;
+            color: #333;
+            border-bottom: 3px solid #eee; 
+            position: relative; 
+        }
+        .psg{
+            font-size: 30px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        } 
+        .tg{
+            box-sizing: border-box; 
+            .clr{
+                clear: both;
+            }
+        }
+        .bk{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 28px;
+            margin-top: 20px;
+        }
+    }
+}

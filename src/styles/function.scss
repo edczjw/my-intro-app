@@ -1,0 +1,43 @@
+
+
+$studentBaseUrl: 'https://insight-static-test.xiao100.com/xinghuo-personal-center-mweb/';
+// 获取图片地址
+@function assetsImgURL($path) {
+  @return url($insight-static-domain + $insight-static-path + '/image/' + $path);
+}
+
+// 获取学生管理图片地址
+@function assetsStudentImgURL($path) {
+  @return url($studentBaseUrl + 'image/' + $path);
+}
+
+// 新仓库图片路径-以后组件会转移过来
+@function ossImgURL($path, $version: '') {
+  $base: $oss-domain + $oss-image-path;
+  // 增加版本控制
+  @if ($version != '') {
+    @return url($base + $version + '/' + $path);
+  }
+  @return url($base + $path);
+}
+
+@function generateFontUrl($path, $version: '') {
+  @return generate($oss-domain, $oss-font-path, $path, $version);
+}
+
+@function generate($doamin, $path, $file, $version: '') {
+  $base: $doamin + $path;
+  // add version control
+  @if ($version != '') {
+    @return url($base + $version + '/' + $file);
+  }
+  @return url($base + $file);
+}
+
+@function px($value, $transform: true) {
+  $px: px;
+  @if ($transform==false) {
+    $px: PX;
+  }
+  @return ($value / 2) + $px;
+}

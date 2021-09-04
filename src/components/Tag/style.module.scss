@@ -1,0 +1,23 @@
+@import '@styles/variable.scss';
+.tag{
+    width:fit-content;
+    margin-left: 10px;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 12px;
+    border-radius: 32px;
+    background-color: $red-color;
+}
+.oxtag{
+    background-color:$contract-color;
+}
+.extag{
+    float: left;
+    font-size: 24px; 
+    margin-top: 20px;
+    padding: 3px 16px;
+    background-color: $primary-color;
+}

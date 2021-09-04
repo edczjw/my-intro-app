@@ -1,0 +1,63 @@
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color:  rgba(0, 0, 0, 0.5); 
+    transition: all 2s;
+    .modalWp{
+        width: 100%;
+        height: 80vh;
+        padding:32px;
+        position: fixed;
+        bottom:0;
+        box-sizing: border-box;
+        border-radius: 20px 20px 0px 0px;
+        background-color: #fff;
+        transition: opacity 0.5s;
+        animation: sliderTop ease 0.3s forwards;
+        .tit{
+            position: relative;
+            text-align: center;
+            font-size: 36px;
+            line-height: 45px; 
+            .close{
+                position: absolute;
+                width: 45px;
+                height: 45px;
+                top: 0;
+                right:0; 
+            }
+        }
+        .wp{
+            margin-top: 40px;
+            padding: 0 0 32px 0;
+            text-align: justify; 
+            overflow-y: scroll;
+            font-size: 28px;
+            color: #5C5F6B;
+            .lp{
+                line-height: 48px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+@keyframes sliderTop {
+	0% {
+		transform: translate3D(0, 60%, 0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 0.7;
+	}
+	100% {
+		opacity: 1;
+		transform: translate3D(0, 0, 0);
+	}
+}

@@ -1,0 +1,39 @@
+// 很多红色的字体
+$primary-red-color: #fa414d;
+
+$red-color: #ff5947;
+
+// 很多红色的小方块
+$background-red-color: #fc5661;
+
+// 新版本的主题颜色
+$primary-color: #7e56c3;
+
+// 合同按钮色
+$contract-color: #9654eb;
+
+// border-radius
+$primary-border-radius: 18px;
+
+// 多数文本颜色
+$primary-text-color: #a0a0a8;
+
+//app 文本 主题色
+$primary-first-text-color: #33364b;
+$primary-second-text-color: #8e919e;
+
+$oss-font-path: '/cmall/mweb/fonts/';
+$oss-image-path: '/cmall/mweb/images/';
+$oss-domain: 'https://xiao-zh-cdn.xiaojiaoyu100.com';
+
+// oss 静态资源域名
+$insight-static-domain: 'https://insight-static-test.xiao100.com';
+// oss 静态资源路径
+$insight-static-path: '/xinghuo-marketing-mall-weapp';
+
+// web环境(含微信H5&APP)
+$platform_web: 'body[data-platform=h5]';
+// 微信H5环境
+$channel_h5: 'body[data-channel=h5]';
+// APP环境【非微信H5环境，则判断为APP（为了兼容app和offlineApp两种CHANNEL_ENV）】
+$channel_app: 'body:not([data-channel=h5])';

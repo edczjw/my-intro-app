@@ -1,0 +1,188 @@
+
+@mixin clearfix {
+	&::before {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+//不展示滚动条 但可滚动元素
+@mixin noscrollbar(){
+	&::-webkit-scrollbar {display:none} 
+	&::-moz-scrollbar {display:none} 
+	&::-ms-scrollbar {display:none}
+	&::-o-scrollbar {display:none}
+}
+
+//单行溢出显示省略号
+@mixin ellipsis() {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+//多行溢出显示省略号
+@mixin ellipsis-ln($line) {
+	display: -webkit-inline-box;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	-webkit-line-clamp: $line;
+}
+
+//设置垂直居中
+@mixin vertical-center() {
+	transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+}
+
+//设置水平垂直居中
+@mixin center() {
+	transform: translate(-50%, -50%);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+
+//设置水平垂直居中
+@mixin flex-center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+//设置水平垂直居中
+@mixin inline-flex-center() {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+
+//设置无弹性
+@mixin flex-fixed() {
+	flex-shrink: 0;
+	flex-grow: 0;
+}
+
+//设置文本模糊
+@mixin blurry-text() {
+	color: transparent;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+//设置 input 的 placeholder 字体颜色和大小
+@mixin placeholder($c, $s) {
+	&::-webkit-input-placeholder {
+		/* WebKit browsers */
+		color: $c;
+		font-size: $s;
+	}
+	&::-moz-placeholder {
+		/* Mozilla Firefox 19+ */
+		color: $c;
+		font-size: $s;
+	}
+	&:-moz-placeholder {
+		/* Mozilla Firefox 4 to 18 */
+		color: $c;
+		font-size: $s;
+	}
+	&:-ms-input-placeholder {
+		/* Internet Explorer 10+ */
+		color: $c;
+		font-size: $s;
+	}
+}
+
+// 通用图标
+@mixin btn($width, $height, $name) {
+	display: inline-block;
+	width: $width;
+	height: $height;
+	background-image: ossImgURL($name);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+// 设置像素为 1px 的单边框
+@mixin hairlines-single-border($direction, $style, $color) {
+	// weapp
+	border-#{$direction}-width: 1rpx;
+	border-#{$direction}-style: $style;
+	border-#{$direction}-color: $color;
+	// h5
+	:global(#{$platform_web}) & {
+		border-#{$direction}-width: 1px;
+	}
+	:global(.hairlines #{$platform_web}) & {
+		/* prettier-ignore */
+		border-#{$direction}-width: 0.5PX;
+	}
+}
+
+// 设置像素为 1px 的边框
+@mixin hairlines-border($style, $color) {
+	// weapp
+	border-width: 1rpx;
+	border-style: $style;
+	border-color: $color;
+	// h5
+	:global(#{$platform_web}) & {
+		border-width: 1px;
+	}
+	:global(.hairlines #{$platform_web}) & {
+		/* prettier-ignore */
+		border-width: 0.5PX;
+	}
+}
+
+// 扩大点击区域
+@mixin extend-click() {
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		top: -20px;
+		right: -20px;
+		bottom: -20px;
+		left: -20px;
+		pointer-events: none;
+	}
+}
+
+@mixin font-weight {
+	&.isIOS {
+		font-weight: 500;
+	}
+
+	&.isAndroid {
+		font-weight: bold;
+	}
+}
+
+// @mixin tag($border-color, $color) {
+// 	display: inline-block;
+// 	margin-left: 8px;
+// 	max-width: 280px;
+// 	height: 18px;
+// 	line-height: 18px;
+// 	font-size: px(24);
+// 	border-radius: 8px;
+// 	color: $color;
+// 	background: #fef6f4;
+// 	margin-right: 8px;
+
+// 	padding: 0 px(12) 0 px(10);
+// 	box-sizing: border-box;
+// 	vertical-align: middle;
+// 	@include ellipsis;
+// 	@include hairlines-border(solid, $border-color);
+// }
