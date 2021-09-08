@@ -1,9 +1,14 @@
-import React, { useEffect } from 'react'
-import { View, Text, Image } from '@tarojs/components'
+import React, { useEffect, useState } from 'react'
+import { View, Image,ScrollView } from '@tarojs/components'
 import Tabbar from '@components/Tabbar';
 import { isH5 } from '@utils/platform';
 import Tag from '@components/Tag'
-import {getOssAddress} from '@utils/tool'
+import HeadImg from '@components/HeadImg'
+import BaseTitle from '@components/BaseTitle'
+import { getOssAddress } from '@utils/tool'
+import LoginModal from '@components/LoginModal'
+import Swipers from '@components/Swiper'
+import isLogin from '@utils/useLoginHook'
 import styles from './style.module.scss';
 
 const BaseInfo = [{
@@ -20,40 +25,46 @@ const BaseInfo = [{
   msg: '广东'
 }, {
   bm: '期望薪资',
-  msg: '20k'
+  msg: '16-20k'
 }, {
   bm: '求职意向',
   msg: '前端开发工程师'
 }
 ]
-const skill=['React','Vue','Taro','小程序','Webpack','Sass','Es6','Git','Yarn']
+const skill = ['React', 'Vue', 'Taro', '小程序', 'Webpack', 'Sass', 'Es6', 'Git', 'Yarn']
 
 // 阿里云头像
 const avatur = getOssAddress('7E982CAA-C4C3-4548-A5DC-B4082E770797.jpeg')
 const Index: React.FC = props => {
+  const [isLoginModal, setIsLoginModal] = useState<boolean>(true)
+  const [isHeadImg, setIsHeadImg] = useState<boolean>(false)
 
   useEffect(() => {
-
-  })
+    console.log('华士大夫', isLogin(), isHeadImg);
+  }, [])
   return (
     <View className={styles.BaseConx}>
-      {/* <HeadImg /> */}
+      {isLogin() && <HeadImg isHeadImg={isHeadImg}></HeadImg>}
+
+      <Swipers></Swipers>
+
+      {isLogin() && <View
+      className={styles.scrollStyle} 
+      >
       <View className={styles.text}>
-        {/* 头像 */}
         <View className={styles.avtars}>
-          <Image mode={'aspectFill'} className={styles.Img} src={avatur}/> 
-        </View> 
-        {/* 格言 */}
+          <Image mode={'aspectFill'} className={styles.Img} src={avatur} />
+        </View>
         <View className={styles.sention}>
-            <View className={styles.name}>
-              曾君伟<Tag txt={'三年前端开发经验'}></Tag>
-            </View>
-            <View>男 / 26岁 / 全日制本科</View> 
+          <View className={styles.name}>
+            曾君伟<Tag txt={'三年前端开发经验'}></Tag>
           </View>
+          <View>男 / 26岁 / 全日制本科</View>
+        </View>
       </View>
-       {/* 内容 */}
+
       <View className={styles.box}>
-        <View className={styles.tit}>基本信息</View>
+        <BaseTitle txt={'基本信息'}></BaseTitle>
         {BaseInfo.map((idm, idx) =>
           <View className={styles.psg} key={idm.bm}>
             <View>{idm.bm}</View>
@@ -61,25 +72,29 @@ const Index: React.FC = props => {
           </View>
         )}
       </View>
-      
+
       <View className={styles.box}>
-        <View className={styles.tit}>技能标签</View>
-        <View className={styles.tg}>  
+        <BaseTitle txt={'技能标签'}></BaseTitle> 
+        <View className={styles.tg}>
           {skill.map((idm) =>
-              <Tag extag={true} key={idm} txt={idm}></Tag>  
+            <Tag extag={true} key={idm} txt={idm}></Tag>
           )}
           <View className={styles.clr}></View>
         </View>
       </View>
 
       <View className={styles.box}>
-        <View className={styles.tit}>教育经历</View>
-        <View className={styles.bk}>  
-          <View>2014.06-2018.06</View> 
-          <View>佛山科学技术学院</View>  
-          <View>全日制本科</View>
+        <BaseTitle txt={'教育经历'}></BaseTitle>  
+        <View className={styles.bk}>
+          <View>2014.06-2018.06</View>
+          <View>佛山科学技术学院</View>
+          <View style={{fontWeight:'bold'}}>全日制本科</View>
         </View>
       </View>
+      </View>}
+
+      {/* 登录弹窗 */}
+      {!isLogin() && isLoginModal && <LoginModal setLoginHide={() => { setIsLoginModal(false); setIsHeadImg(true) }}></LoginModal>}
       {isH5 && <Tabbar></Tabbar>}
     </View>
   )

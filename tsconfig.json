@@ -10,7 +10,8 @@
 			"@components/*": ["src/components/*"],
 			"@services/*": ["src/services/*"],
 			"@models/*": ["src/models/*"],
-			"@styles/*": ["src/styles/*"]
+			"@styles/*": ["src/styles/*"],
+			"@redux/*": ["src/redux/*"],
 		},
     "target": "es2017",
     "module": "commonjs",

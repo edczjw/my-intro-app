@@ -5,6 +5,7 @@ import { View,Image } from '@tarojs/components';
 import React from 'react';
 import {getOssAddress} from '@utils/tool'
 import copy from '@utils/copy'
+import BaseTitle from '@components/BaseTitle'
 import styles from './style.module.scss';
 
 interface Iprops{
@@ -27,7 +28,7 @@ const Contract:React.FC<Iprops>=props=>{
 
     return(
         <View className={styles.contractBox}>
-            <View className={styles.tit}>联系方式</View>
+            <BaseTitle txt={'联系方式'}></BaseTitle> 
             {
                 Conlist.map((idm,idx)=>{
                     return <View key={idm.label+idx} className={styles.line}>

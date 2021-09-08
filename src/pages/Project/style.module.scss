@@ -5,7 +5,7 @@
     padding: 32px; 
     background-color: #fff;
     border-radius: 16px;
-    font-size: 22px;
+    font-size: 24px;
     color:#333;
     box-shadow: 0px 6px 36px 0px rgba(66, 66, 70, 0.08);
    .pwop{ 
@@ -35,8 +35,19 @@
            line-height: 50px;
        }
        .po{
-           font-size: 20px;
+           font-size: 24px;
            line-height: 36px;
+       }
+       .minibox{
+            margin-top: 20px; 
+            padding:20px;
+            text-align: center;
+            background-color: rgba(216, 214, 211, 0.342);
+        .otherMiniImg{
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+        }
        }
    }
 }

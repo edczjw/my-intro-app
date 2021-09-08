@@ -1,6 +1,7 @@
 import { View,Image } from '@tarojs/components';
 import React, { useEffect, useState } from 'react'; 
 import {getOssAddress} from '@utils/tool'
+import BaseTitle from '@components/BaseTitle'
 import WorkModals from './components/WorkModals.tsx';
 import styles from './style.module.scss';
 
@@ -42,8 +43,8 @@ const WorkInfo:React.FC<IProps>=props=>{
         modalVisible? document.body.style.overflow = 'hidden':document.body.style.overflow = 'auto'
     },[modalVisible])
     return (
-        <View className={styles.workBox}>
-            <View className={styles.tit}>工作经历</View> 
+        <View className={styles.workBox}> 
+            <BaseTitle txt={'工作经历'}></BaseTitle>  
             {workList.map((idm,idx)=>{
             return <View key={idm.cname} className={styles.wkline}>
                 <View className={styles.tm}>
@@ -54,8 +55,10 @@ const WorkInfo:React.FC<IProps>=props=>{
                     <View className={styles.cs}>
                         <View>{idm.size}</View>
                     </View>
-                    <View className={styles.pos}> {idm.position}</View> 
-                    {idm.id !== 2 && <Image  onClick={()=>handleClick(idm.id)} className={styles.icon} src={getOssAddress('rticon.png')}></Image>}
+                    <View onClick={()=>handleClick(idm.id)}  style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+                        <View className={styles.pos}> {idm.position}</View> 
+                        {idm.id !== 2 && <Image className={styles.icon} src={getOssAddress('rticon.png')}></Image>}
+                    </View>
                 </View>
             </View>})}
 

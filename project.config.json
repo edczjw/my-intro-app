@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "my-intro-app",
   "description": "个人简历",
-  "appid": "wxef8bbacca17181fe",
+  "appid": "wx2b1a0bc0fb82ace1",
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -24,7 +24,7 @@
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": false,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],

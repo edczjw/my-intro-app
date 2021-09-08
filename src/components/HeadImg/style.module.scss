@@ -1,14 +1,40 @@
 .HimgWrapper{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin: 0 auto;
-    border: 1px solid #000;
+    width: 100%;
+    height: 60px;  
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end;
+    background-color: burlywood;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 26px;
+    color: #eee;
+    // border-radius: 0 0 32px 32px;
+    transition: opacity 0.5s;
+    animation: sliderTop ease 0.5s forwards;
+    z-index: 99;
     .Img{
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        border: 1px solid #000;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; 
+        margin: 0 16px;
     }
     
+}
+
+
+@keyframes sliderTop {
+	0% {
+		transform: translate3D(0, -100%, 0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 0.7;
+	}
+	100% {
+		opacity: 1;
+		transform: translate3D(0, 0, 0);
+	}
 }

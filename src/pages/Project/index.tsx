@@ -1,9 +1,10 @@
 /**
  * 项目经历页面
  */
-import { View } from '@tarojs/components';
+import { View,Image } from '@tarojs/components';
 import React from 'react';
 import Tag from '@components/Tag'
+import Taro from '@tarojs/taro'
 import styles from './style.module.scss';
 
 interface Iprops{
@@ -13,9 +14,14 @@ const List=[{
     time:'2021.02-至今',
     pname:'星火报读-C端项目',
     cname:'广东世纪晓教育科技有限公司',
+    otMiniName:'星火教育小程序',
+    appid:'wxb6f3b87618da8f15',   // 其他小程序appid
+    path:'views/common/Home/index',  // 其他小程序首页路径
+    otherMiniImg:'https://xiao-zh-cdn.xiao100.com/cmall/msystem/img/icon-xh.png', // 其他小程序的图标
+    envVersion:'develop',  // 其他小程序版本
     piList:[{
         nt:'应用技术',
-        val:'Taro + React + Es6 + Typescript'
+        val:' Taro + React + Es6 + Typescript '
     },{
         nt:'多终端',
         val:'基于 Taro 实现一套代码在三端运行（星火教育 App、微信公众号、小程序）；'
@@ -34,7 +40,7 @@ const List=[{
         cname:'广东世纪晓教育科技有限公司',
         piList:[{
             nt:'应用技术',
-            val:'React + Es6 + Typescript + ice.js + icestark（微前端）'
+            val:' React + Es6 + Typescript + ice.js + icestark（微前端）'
         },{
             nt:'项目描述',
             val:'该管理平台用于配置星火教育 APP 等移动端项目的数据来源，如：课程管理、班级管理、学生管理、教师管理、订单管理、优惠券管理、移动端首页自定义配置、权限管理等；'
@@ -49,7 +55,7 @@ const List=[{
             cname:'广州仁东互联网小额贷款有限公司',
             piList:[{
                 nt:'应用技术',
-                val:'Vue + Es6 + JS + VantUi）'
+                val:' Vue2 + Es6 + JS + VantUi）'
             },{
                 nt:'项目描述',
                 val:'海拍客是一款母婴电商平台app，商家可通过嵌入进App中的乐分期H5页面进行贷款批购母婴产品，乐分期提供一整套贷款H5页面供商家借款、查账、还款等功能，可选择分期还和随心还两种产品。'
@@ -59,6 +65,21 @@ const List=[{
                 '开发需求功能点，与后台协调API接口；'
             ]}]
 const ProjectInfo:React.FC<Iprops>=props=>{
+
+    // 跳转至其他小程序
+    const goToOtMini=(appid,envVersion,path)=>{
+        Taro.navigateToMiniProgram({
+            appId: appid,
+            path: path,
+            extraData: {
+              foo: 'bar'
+            },
+            envVersion: envVersion,
+            success: function(res) {
+              // 打开成功
+            }
+          })
+    }
     return(
         <View className={styles.pBox}>
             {
@@ -81,6 +102,11 @@ const ProjectInfo:React.FC<Iprops>=props=>{
                                 return <View className={styles.po}>{pn+1}、{pm}</View>
                             })
                         }
+
+                        {idm.appid && <View className={styles.minibox}>
+                            <Image onClick={()=>goToOtMini(idm.appid,idm.envVersion,idm.path)} className={styles.otherMiniImg} src={idm.otherMiniImg}/>
+                            <View className={styles.pw}>{idm.otMiniName}（点击跳转）</View>
+                        </View>}
                     </View>
                 })
             } 
