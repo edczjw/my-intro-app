@@ -18,8 +18,8 @@ const HeadImg:React.FC<Iprops>=props=>{
         <View className={styles.HimgWrapper}>
             <View>欢迎您！{userInfo?.nickName}</View>
             <Image
-                className={styles.Img}
-                src={userInfo?.avatar}
+              className={styles.Img}
+              src={userInfo?.avatar}
             />
         </View>
     )

@@ -1,23 +1,22 @@
 @import '@styles/variable.scss';
 .tag{
-    width:fit-content;
+    width:max-content;
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2px 12px;
-    border-radius: 32px;
-    background-color: $red-color;
+    padding: 0 12px;
+    border-radius: 6px;
+    background-color: $red-color; 
+    font-family: PingFangSC-Medium;
 }
 .oxtag{
     background-color:$contract-color;
 }
-.extag{
-    float: left;
-    font-size: 24px; 
-    margin-top: 20px;
-    padding: 3px 16px;
+.extag{  
+    padding: 4px 12px; 
+    margin-bottom: 10px;
     background-color: $primary-color;
 }

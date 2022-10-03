@@ -26,12 +26,13 @@ const Swipers:React.FC<Iprops>=props=>{
     return(
         <View className={styles.swipBox}>
             <Swiper
-                className='test-h'
-                indicatorColor='#fff'
-                indicatorActiveColor='#7e56c3'
-                circular
-                indicatorDots
-                autoplay>
+              className='test-h'
+              indicatorColor='#fff'
+              indicatorActiveColor='#7e56c3'
+              circular
+              indicatorDots
+              autoplay
+            >
                     {list?.map((idm,idx)=>{
                         return <SwiperItem key={idm.img}>
                             <View className={styles.swiperImg}>
