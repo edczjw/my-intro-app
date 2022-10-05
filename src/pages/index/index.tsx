@@ -19,19 +19,19 @@ const BaseInfo = [{
   msg: '广州'
 }, {
   bm: '工作年限',
-  msg: '5年'
+  msg: '5年以上'
 }, {
   bm: '籍贯',
   msg: '广东'
 }, {
   bm: '期望薪资',
-  msg: '20k'
+  msg: '面议'
 }, {
   bm: '岗位意向',
   msg: '前端开发'
 }
 ]
-const skill = ['React', 'Vue2','Vue3', 'Taro', '小程序', 'Webpack', 'Sass', 'Es6', 'Git', 'Yarn']
+const skill = ['React', 'Vue2', 'Vue3', 'Taro', '小程序', 'Webpack', 'Sass', 'Es6', 'Git', 'Yarn']
 
 // 阿里云头像
 const avatur = getOssAddress('7E982CAA-C4C3-4548-A5DC-B4082E770797.jpeg')
@@ -57,13 +57,22 @@ const Index: React.FC = props => {
             </View>
             <View className={styles.sention}>
               <View className={styles.name}>
-                曾君伟<Tag txt='三年前端开发经验'></Tag>
+                曾君伟<Tag txt='五年以上前端开发经验'></Tag>
               </View>
-              <View>男 / 26岁 / 全日制本科</View>
+              <View>男 / 27岁 / 全日制本科</View>
             </View>
           </View>
 
           <Swipers></Swipers>
+
+          <View className={styles.box}>
+            <BaseTitle txt='教育经历'></BaseTitle>
+            <View className={styles.bk}>
+              <View>2014.06-2018.06</View>
+              <View>佛山科学技术学院</View>
+              <View style={{ fontWeight: 'bold' }}>全日制本科</View>
+            </View>
+          </View>
 
           <View className={styles.box}>
             <BaseTitle txt='基本信息'></BaseTitle>
@@ -82,15 +91,6 @@ const Index: React.FC = props => {
                 <Tag extag key={idm} txt={idm}></Tag>
               )}
               <View className={styles.clr}></View>
-            </View>
-          </View>
-
-          <View className={styles.box}>
-            <BaseTitle txt='教育经历'></BaseTitle>
-            <View className={styles.bk}>
-              <View>2014.06-2018.06</View>
-              <View>佛山科学技术学院</View>
-              <View style={{ fontWeight: 'bold' }}>全日制本科</View>
             </View>
           </View>
         </View>

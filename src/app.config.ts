@@ -7,35 +7,29 @@ export default {
   ],
   tabBar: {
     list: [{
-      'iconPath': 'assets/Icons/base.png',
-      'selectedIconPath': 'assets/Icons/baseActive.png',
+      'iconPath': 'assets/Icons/self.png',
+      'selectedIconPath': 'assets/Icons/self1.png',
       pagePath: 'pages/index/index',
       text: '基本信息'
-    }, 
-    // {
-    //   'iconPath': 'assets/Icons/base.png',
-    //   'selectedIconPath': 'assets/Icons/baseActive.png',
-    //   pagePath: 'pages/index/index',
-    //   text: '技能强度'
-    // }, 
+    },  
     {
-      'iconPath': 'assets/Icons/wp.png',
-      'selectedIconPath': 'assets/Icons/wp1.png',
+      'iconPath': 'assets/Icons/user.png',
+      'selectedIconPath': 'assets/Icons/user1.png',
       pagePath: 'pages/WorkInfo/index',
-      text: '工作经历'
+      text: '工作经历', 
     }, {
-      'iconPath': 'assets/Icons/pg.png',
-      'selectedIconPath': 'assets/Icons/pg1.png',
+      'iconPath': 'assets/Icons/xm.png',
+      'selectedIconPath': 'assets/Icons/xm1.png',
       pagePath: 'pages/Project/index',
       text: '项目经历'
     }, {
-      'iconPath': 'assets/Icons/ct.png',
-      'selectedIconPath': 'assets/Icons/ct1.png',
+      'iconPath': 'assets/Icons/kefu.png',
+      'selectedIconPath': 'assets/Icons/kefu1.png',
       pagePath: 'pages/Contract/index',
       text: '联系方式'
     }],
     'color': '#000',
-    'selectedColor': '#17abe3',
+    'selectedColor': '#d81e06',
     'backgroundColor': '#fff',
     'borderStyle': 'white'
   },

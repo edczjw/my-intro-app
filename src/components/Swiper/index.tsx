@@ -4,7 +4,7 @@
 
 import { View,Swiper,SwiperItem,Image } from '@tarojs/components'
 import React from 'react'
-import { getOssAddress } from '@utils/tool'
+import { getOssAddress2 } from '@utils/tool'
 import styles from './style.module.scss';
 
 interface Iprops{
@@ -13,13 +13,13 @@ interface Iprops{
 const list=[
     {
         id:0,
-        img:getOssAddress('DA295E40-0341-445A-885D-7D51308CD597.jpeg')
+        img:getOssAddress2('B314BAB9-3DBB-4A67-9178-5AB240ED3D93.jpeg')
     },{
         id:1,
-        img:getOssAddress('2E8CFDA0-FE83-4560-8CAD-B7827F13FC9B.jpeg')
+        img:getOssAddress2('3B55CABC-A59A-4AD1-97AB-1D8D0BCCD2C5.jpeg')
     },{
         id:2,
-        img:getOssAddress('DE61DCDA-C52E-4302-B63E-FA736C1D321C.jpeg')
+        img:getOssAddress2('B0CB60C7-E7D0-4E71-91CB-A669E57E9627.jpeg')
     }
 ]
 const Swipers:React.FC<Iprops>=props=>{

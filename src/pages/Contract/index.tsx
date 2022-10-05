@@ -28,7 +28,7 @@ const Contract:React.FC<Iprops>=props=>{
 
     return(
         <View className={styles.contractBox}>
-            <BaseTitle txt={'联系方式'}></BaseTitle> 
+            <BaseTitle txt='联系方式'></BaseTitle> 
             {
                 Conlist.map((idm,idx)=>{
                     return <View key={idm.label+idx} className={styles.line}>
